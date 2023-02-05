@@ -1,12 +1,17 @@
-import React from "react";
-import "./Button.scss";
+import React from 'react';
+import './Button.scss';
 
 export interface ButtonProps {
-  label: string;
+	label: string;
+	accent?: 'primary' | 'secondary';
 }
 
 const Button = (props: ButtonProps) => {
-  return <button>{props.label}</button>;
+	return (
+		<button className={`${props.accent ? props.accent : ''}`}>
+			{props.label}
+		</button>
+	);
 };
 
 export default Button;
